@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from "react";
 import { Services } from "../Config/Config";
 import styled from "styled-components";
 import { info } from "../Info/info";
 
 function About() {
-  const [age, setAge] = useState("");
-  const yearOfBirth = "2001";
-  const getAge = () => {
-    setAge(new Date().getFullYear() - yearOfBirth);
-  };
-  useEffect(() => {
-    getAge();
-  });
+
   return (
     <Wrapper className="about-section">
       <div className="card-inner">
