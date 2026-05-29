@@ -1,4 +1,3 @@
-import { Services } from "../Config/Config";
 import styled from "styled-components";
 import { info } from "../Info/info";
 
@@ -51,7 +50,7 @@ function About() {
               <span className="first-word">My{" "}</span>Services
             </div>
             <div className="row service-items border-line-v" >
-              {Services.map((val, ind) => (
+              {info.services.map((val, ind) => (
                 <div key={ind} className="col col-6 border-line-h" >
                   <div className="service-item">
                     <div className="icon">
@@ -78,18 +77,11 @@ function About() {
               <div className="col col-6 border-line-v">
                 <div className="hobby-list">
                   <ul>
-                    <li>
-                      <strong>Digital Art</strong>
-                    </li>
-                    <li>
-                      <strong>Coding</strong>
-                    </li>
-                    <li>
-                      <strong>Travelling</strong>
-                    </li>
-                    <li>
-                      <strong>Reading</strong>
-                    </li>
+                    {info.hobbies.map((val, ind) => (
+                      <li key={ind}>
+                        <strong>{val}</strong>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>

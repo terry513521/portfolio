@@ -1,6 +1,5 @@
 import React from "react";
-import { SkillSet } from "../Config/Config";
-import { Experience, Education } from "../Config/Config";
+import { info } from "../Info/info";
 import { FaUniversity, FaBriefcase } from "react-icons/fa";
 import styled from "styled-components";
 
@@ -23,8 +22,8 @@ function Resume() {
                   <div className="name" data-aos="fade-up">Experience</div>
                 </div>
                 <div className="resume-items">
-                  {Experience &&
-                    Experience.map((val, ind) => (
+                  {info.experience &&
+                    info.experience.map((val, ind) => (
                       <div
                         key={val.id}
                         className={
@@ -32,7 +31,7 @@ function Resume() {
                             ? `${"resume"}-${"item"} ${"active"} ${"border"}-${"line"}-${"h"}`
                             : `${"resume"}-${"item"} ${"border"}-${"line"}-${"h"}`
                         }
-                        data-aos="fade-up" data-aos-delay={(ind+1)*100}
+                        data-aos="fade-up" data-aos-delay={(ind + 1) * 100}
                       >
                         <div className="date">{val.date}</div>
                         <div className="name">{val.name}</div>
@@ -56,8 +55,8 @@ function Resume() {
                   <div className="name" data-aos="fade-up">Education</div>
                 </div>
                 <div className="resume-items">
-                  {Education &&
-                    Education.map((val, ind) => (
+                  {info.education &&
+                    info.education.map((val, ind) => (
                       <div
                         key={val.id}
                         className={
@@ -65,7 +64,7 @@ function Resume() {
                             ? `${"resume"}-${"item"} ${"active"} ${"border"}-${"line"}-${"h"}`
                             : `${"resume"}-${"item"} ${"border"}-${"line"}-${"h"}`
                         }
-                        data-aos="fade-up" data-aos-delay={(ind+1)*100}
+                        data-aos="fade-up" data-aos-delay={(ind + 1) * 100}
                       >
                         <div className="date">{val.date}</div>
                         <div className="name">{val.name}</div>
@@ -84,23 +83,23 @@ function Resume() {
             </div>
             <div className="row grid-items border-line-v">
               <ul className="grid-item">
-                {SkillSet && SkillSet.map((val, ind) => (
-                    <li key={val.id}>
-                      <div className="cards">
-                        <div className="card-img">
-                          <img
-                            width="459"
-                            height="543"
-                            src={val.imgsrc}
-                            alt="img"
-                          />
-                        </div>
-                        <div className="card-title">
-                          <span className="title">{val.name}</span>
-                        </div>
+                {info.skills && info.skills.map((val, ind) => (
+                  <li key={val.id}>
+                    <div className="cards">
+                      <div className="card-img">
+                        <img
+                          width="459"
+                          height="543"
+                          src={val.imgsrc}
+                          alt="img"
+                        />
                       </div>
-                    </li>
-                  ))}
+                      <div className="card-title">
+                        <span className="title">{val.name}</span>
+                      </div>
+                    </div>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>

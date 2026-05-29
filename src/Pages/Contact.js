@@ -65,7 +65,6 @@ function Contact() {
             </div>
             <div className="row">
               <div className="col col-12 border-line-v ">
-               
                     <div className="map">
                       <div style={{ width: "100%" }}>
                         <iframe

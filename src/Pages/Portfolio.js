@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import styled from "styled-components";
-import { ProjImg } from "../Config/Config";
+import { info } from "../Info/info";
 import { AnimatePresence, motion } from "framer-motion";
 import Works from "../Components/Works";
 
@@ -10,7 +10,7 @@ const Portfolio = () => {
   const [items, setitems] = useState([]);
   const [collection, setCollection] = useState([]);
 
-  const sortItem = (Items) =>{
+  const sortItem = (Items) => {
     const result = Items.sort(function (a, b) {
       const nameA = a.name.toUpperCase();
       const nameB = b.name.toUpperCase();
@@ -26,20 +26,20 @@ const Portfolio = () => {
   }
 
   const filterItem = (categItem) => {
-      SetIsActive(categItem)
-      const updatedItems = ProjImg.filter((curElem) => {
-        return curElem.category === categItem;
-      });
-      const result = sortItem(updatedItems)
-      setitems(result);
-    
+    SetIsActive(categItem)
+    const updatedItems = info.proImages.filter((curElem) => {
+      return curElem.category === categItem;
+    });
+    const result = sortItem(updatedItems)
+    setitems(result);
+
   };
 
   console.log(isActive)
 
-  useEffect(()=>{
-     setitems(ProjImg);
-     setCollection([...new Set(ProjImg.map((item)=>item.category))])
+  useEffect(() => {
+    setitems(info.proImages);
+    setCollection([...new Set(info.proImages.map((item) => item.category))])
   }, [])
 
   return (
@@ -53,32 +53,32 @@ const Portfolio = () => {
             </div>
           </div>
           <div className={`p-btns`} data-aos="fade-up">
-            
+
             <button
               className={`btn p-btn ${isActive === "all" ? "active" : ""}`}
               data-btn-num="2"
               onClick={() => {
-                setitems(ProjImg)
+                setitems(info.proImages)
                 SetIsActive("all")
-                } }
+              }}
             >
               All
             </button>
-          {
-            collection.map((item)=>{
-              return (
-                <button
-                key={item}
-                className={`btn p-btn ${isActive === item ? "active" : ""}`}
-                data-btn-num="2"
-                onClick={() => filterItem(item)}
-            >
-              {item}
-            </button>
-              )
-            })
-          }
-           
+            {
+              collection.map((item) => {
+                return (
+                  <button
+                    key={item}
+                    className={`btn p-btn ${isActive === item ? "active" : ""}`}
+                    data-btn-num="2"
+                    onClick={() => filterItem(item)}
+                  >
+                    {item}
+                  </button>
+                )
+              })
+            }
+
           </div>
           <motion.div layout className="grid-items">
             <AnimatePresence>
