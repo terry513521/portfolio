@@ -8,10 +8,9 @@ const Footer = () => {
       <div className="f-container">
         <div className="f-credits">
           <p>
-           ©️ 2022 All rights reserved | 
+           ©️ 2024 All rights reserved 
           </p>
-          <p> designed with <span className="text-white">❤️</span> by <span className="highlight">Narender
-            Singh Bisht</span></p>
+          <p> designed with <span className="text-white">❤️</span> by <span className="highlight" ><a href="https://mykola-six.vercel.app/" target="_blank" rel="noopener noreferrer">Mykola Nesvitaiev</a></span></p>
         </div>
       </div>
     </div>
